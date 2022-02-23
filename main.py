@@ -7,7 +7,7 @@ import os
 DATABASE = 'DataBaseImages.db'
 SECRET_KEY = '5f352379324c22463451387a0aec5d2f'
 UPLOADER_FOLDER = r'C:\Users\Admin\PycharmProjects\sqlite3\SaveImages'
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
 app.config['UPLOADER_FOLDER'] = UPLOADER_FOLDER
