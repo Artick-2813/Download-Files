@@ -25,7 +25,7 @@
 ## Цель создания проекта  
 
 :white_check_mark: Изучить библиотеку Flask на Python  
-:white_check_mark: Изучить Sqlite3, поработать с базой данной
+:white_check_mark: Изучить Sqlite3, поработать с базой данной  
 :white_check_mark: Изучить SQL запросы
 
 
