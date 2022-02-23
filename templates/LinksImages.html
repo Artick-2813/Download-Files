@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+<body>
+
+{% block content %}
+
+{% for elem in pic %}
+
+	<div class="wrapper_link">       
+       <a href="{{ url_for('uploads', id_image=elem.id) }}">{{ elem.title}}</a>
+    </div>
+        
+{% endfor %}
+
+	<div class="btn_back">
+		<a href="/">На главную</a>
+	</div>
+
+{% endblock %}
+
+</body>

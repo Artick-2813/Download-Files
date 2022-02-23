@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    <title>{{ title_image }}</title>
+{% endblock %}
+
+<body>
+
+{% block content %}
+
+    <div class="wrapper_picture">
+        <span>{{title_image}}</span>
+        <img src="{{ url_for('send_img', filename=filename) }}" alt="{{ title_image }}">
+        <a href="{{ url_for('remove', id_image=id_image) }}" class="btn_remove">Удалить</a>
+    </div>
+    
+
+    <div class="btn_back">
+        <a href="{{ url_for('ShowLinksPicture')}}">Назад</a>
+    </div>
+    
+
+{% endblock %}
+
+
+</body>

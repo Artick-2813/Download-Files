@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS image(
+
+id INTEGER PRIMARY KEY,
+
+title TEXT NOT NULL,
+
+resolution TEXT NOT NULL
+
+);

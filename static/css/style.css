@@ -1,0 +1,255 @@
+
+/*--- MAIN FILE CSS ---*/
+
+body{
+	background-color: royalblue;
+	max-height: auto;
+	padding: 0;
+	margin: 0;
+	font-family: DejaVu Sans Mono, monospace;
+	font-weight: 200;
+
+}
+
+nav.menu{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100px;
+	background-color: darkblue;
+	
+}
+nav.menu ul{
+	list-style: none;
+	display: flex;
+}
+
+nav.menu ul li{
+	padding-right: 40px;
+	padding-left: 40px;
+}
+nav.menu ul li a{
+	padding: 15px;
+	font-size: 2.5em;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 10px;
+	font-family: DejaVu Sans Mono, cursive;
+
+}
+
+nav.menu ul li a:hover{
+	background-color: ghostwhite;
+	color: #000;
+	transition: 1s ease;
+}
+
+form{
+	margin-top: 500px;
+	text-align: center;
+	padding: 0% 25% 0% 25%;
+	
+}
+
+.field_wrapper{
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+  text-align: center;
+}
+.field_file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.field_file-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+ 
+.field_file-fake {
+  height: 60px;
+  width: calc(100% - 130px);
+  display: flex;
+  
+  align-items: center;
+  padding: 0 25px;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+  background-color: ghostwhite;
+  font-size: 2.5em;
+  box-shadow: 8px 5px 5px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+ 
+.field_file-button {
+  width: 330px;
+  height: 60px;
+  background-color: darkblue;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  box-shadow: 8px 5px 5px rgba(0,0,0,0.6);
+}
+
+
+.btn_send{
+	font-family: Bradley Hand, cursive;
+	margin-top: 30px;
+	width: 350px;
+	height: 80px;
+	font-size: 2.5em;
+	cursor: pointer;
+	outline: none;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	color: #000;
+	box-shadow: 8px 5px 5px rgba(0,0,0,0.6);
+}
+
+.btn_send:hover{
+	background-color: darkblue;
+	color: #fff;
+	transition: 0.9s ease;
+}
+
+.flash.FileNot{
+	position: relative;
+	top: 250px;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	color: white;
+	background-color: darkblue;
+	text-align: center;
+	font-size: 30px;
+}
+
+
+/*--- IMAGES FILE CSS ---*/
+
+.wrapper_picture{
+	margin-top: 100px;
+	margin-right: 35px;
+	margin-left: 35px;
+	text-align: center;
+	
+}
+
+.wrapper_picture span{
+	display: flex;
+	justify-content: center;
+	font-size: 2.5em;
+	margin-bottom: 15px;
+	background-color: ghostwhite;
+	color: black;
+	border-radius: 15px;
+	padding: 15px;
+}
+
+
+.btn_remove{
+	display: flex;
+	justify-content: center;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: black;
+	width: 150px;
+	margin: 10px auto;
+}
+
+.btn_remove:hover{
+	color: red;
+	transition: 0.9s ease;
+}
+
+.btn_back{
+	display: flex;
+	justify-content: center;
+	font-family: Bradley Hand, cursive;
+	margin: 70px auto;
+	font-size: 2.5em;
+	width: 350px;
+	height: 80px;
+	cursor: pointer;
+	outline: none;
+	border-radius: 10px;
+	border: none;
+	background-color: #fff;
+	color: #000;
+	box-shadow: 8px 5px 5px rgba(0,0,0,0.6);
+}
+
+.btn_back a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 350px;
+	height: 80px;
+	text-decoration: none;
+}
+
+.btn_back:hover{
+	background-color: darkblue;
+	transition: 0.9s ease;
+}
+
+.btn_back a:hover{
+	color: #fff;
+	transition: 0.9s ease;
+}
+
+
+/*--- LinksImages FILE CSS ---*/
+
+.wrapper_link{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	margin: 100px auto;
+	background-color: ghostwhite;
+	border-radius: 15px;
+	margin-right: 15%;
+	margin-left: 15%;
+}
+
+.wrapper_link a{
+	font-size: 2.5em;
+	text-decoration: none;
+}
+
+
+/*--- SUCCESS FILE CSS ---*/
+
+.wrapper_remove{
+	text-align: center;
+	margin-top: 250px;
+	margin-bottom: 30px;
+	background-color: darkblue;
+	padding: 15px;
+}
+
+.wrapper_remove h1{
+	font-size: 4.5em;
+	color: snow;
+}
+
+.btn_back a{
+	text-decoration: none;
+	color: black;	
+}
+
+
+
+

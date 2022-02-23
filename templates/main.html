@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+	{% block title %}
+        <title>{{ title }}</title>
+    {% endblock %}
+
+</head>
+
+<body>
+
+{% block menu %}
+<nav class="menu">
+    <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+        <li>
+            <a href="{{ url_for('ShowLinksPicture') }}">Картинки</a>
+        </li>
+    </ul>
+
+</nav>
+
+{% endblock %}
+
+ {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}">{{ msg }}</div>
+ {% endfor %}
+
+{% block content %}
+ <form action="/" method="post" class='form-control' enctype="multipart/form-data">
+  
+ <div class="field_wrapper">
+  
+   <input name="file" type="file" name="file" id="field_file" class="field_file" multiple>
+      
+   <label class="field_file-wrapper" for="field_file">
+     <div class="field_file-fake">Файл не выбран</div>
+     <div class="field_file-button">Выбрать</div>
+   </label>
+      
+ </div>
+ 
+ <input type="submit" value="Отправить" class='btn_send'>
+		
+ </form>
+
+{% endblock %}
+
+</body>
+
+<script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/js.js')}}"></script>
+</html>
