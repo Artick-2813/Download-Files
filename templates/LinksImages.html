@@ -8,8 +8,12 @@
 
 {% block content %}
 
-{% for elem in pic %}
+	<div class="info_from_user">
+		<span>У вас пока нет ни одной загруженной картинки!</span>
+	</div>
 
+{% for elem in pic %}
+    
 	<div class="wrapper_link">       
        <a href="{{ url_for('uploads', id_image=elem.id) }}">{{ elem.title}}</a>
     </div>
