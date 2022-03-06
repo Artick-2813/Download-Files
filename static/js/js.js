@@ -6,5 +6,13 @@ $(document).ready(function() {
   });
 });
 
+if ($('.wrapper_link').length){
+	 $('.info_from_user').css('display', 'none')
+}
+
+else{
+	$('.info_from_user').css('display', 'block')
+}
+
 
 
