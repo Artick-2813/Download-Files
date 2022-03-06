@@ -211,7 +211,16 @@ form{
 
 
 /*--- LinksImages FILE CSS ---*/
-
+.info_from_user{
+	margin: 150px auto;
+	text-align: center;
+	background-color: darkblue;
+	color: snow;
+	padding: 20px;
+}
+.info_from_user span{
+	font-size: 4.5em;
+}
 .wrapper_link{
 	display: flex;
 	justify-content: center;
