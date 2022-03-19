@@ -8,13 +8,25 @@
 
 {% block content %}
 
-    <div class="wrapper_picture">
-        <span>{{title_image}}</span>
-        <img src="{{ url_for('send_img', filename=filename) }}" alt="{{ title_image }}">
-        <a href="{{ url_for('remove', id_image=id_image) }}" class="btn_remove">Удалить</a>
-    </div>
+    <main class="container">
     
-
+    	<span>{{title_image}}</span>
+    	
+    	<img src="{{ url_for('send_img', filename=filename) }}" alt="{{ title_image }}">
+    	
+    	<div class="wrapper_tool">
+    	
+    		<a href="{{ url_for('remove', id_image=id_image) }}">
+        	
+        		<img src="{{url_for('static', filename='img/bush.png') }}" alt="bush" width="25px" >
+        	
+        	</a>
+        	
+    	</div>
+    	
+    </main>
+    
+    
     <div class="btn_back">
         <a href="{{ url_for('ShowLinksPicture')}}">Назад</a>
     </div>
