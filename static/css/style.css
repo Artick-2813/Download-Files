@@ -214,21 +214,62 @@ main.container .wrapper_tool img{
 .info_from_user span{
 	font-size: 4.5em;
 }
+
+
 .wrapper_link{
+/*
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	height: 120px;
+*/
+/*	height: 120px;*/
 	margin: 100px auto;
+	
 	background-color: ghostwhite;
 	border-radius: 15px;
-	margin-right: 15%;
-	margin-left: 15%;
+	
+	margin-right: 35%;
+	margin-left: 35%;
+	display: grid;
+	
+	grid-template-columns: 0.1fr 1fr 250px 0.5fr;
+	grid-template-rows: 0.5fr 0.5fr;
+}
+.wrapper_link .date{
+/*	align-self: flex-start;*/
+	font-size: 1.5em;
+	padding-right: 15px;
+	padding-left: 15px;
+	font-family: cursive;
+	grid-column: 2/2;
+
 }
 
 .wrapper_link a{
-	font-size: 2.5em;
+	font-size: 2.0em;
+	text-align: center;
 	text-decoration: none;
+	margin-bottom: 10px;
+	grid-column: 3/3;
+	grid-row: 3/3;
+	line-height: 1.2;
+	word-break: break-all;
+	font-family: Marker Felt, fantasy;
+	letter-spacing: 2px;
+}
+
+.wrapper_link .icons{
+	margin-left: 10px;
+	grid-column: 2/2;
+	grid-row: 3/3;
+	
+}
+
+.wrapper_link .icons img{
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
 }
 
 
