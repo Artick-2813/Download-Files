@@ -13,13 +13,21 @@
 	</div>
 
 {% for elem in pic %}
-    
-	<div class="wrapper_link">       
-       <a href="{{ url_for('uploads', id_image=elem.id) }}">{{ elem.title}}</a>
-    </div>
-        
-{% endfor %}
 
+	<div class="wrapper_link">
+
+		<div class="date">
+   	   		<span>{{ elem.datetime }}</span>
+   	   </div>
+   	   <div class="icons">
+   	   	<img src="{{ url_for('send_img', filename=elem.name_file) }}" alt="{{ elem.title }}">
+   	   </div>
+   	   
+   	   <a href="{{ url_for('uploads', id_image=elem.id) }}">{{ elem.title }}</a>
+		
+    </div>
+
+{% endfor %}
 	<div class="btn_back">
 		<a href="/">На главную</a>
 	</div>
