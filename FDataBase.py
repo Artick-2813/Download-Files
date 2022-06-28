@@ -6,9 +6,10 @@ class FDataBase:
         self.db = db
         self.cur = db.cursor()
 
-    def addImage(self, title, resolution):
+    def addImage(self, title, resolution, name_file, datetime):
         try:
-            self.cur.execute(""" INSERT INTO image VALUES(NULL, ?, ?)""", (title, resolution))
+            self.cur.execute(""" INSERT INTO image VALUES(NULL, ?, ?, ?, ?)""", (title, resolution, datetime,
+                                                                                 name_file))
             self.db.commit()
             print('Данные успешно добавлены в БД')
 
@@ -20,7 +21,8 @@ class FDataBase:
 
     def getDataImage(self, id_img):
         try:
-            self.cur.execute(f""" SELECT title, resolution, id FROM image WHERE id = {id_img} LIMIT 1 """)
+            self.cur.execute(f""" SELECT title, resolution, id FROM image WHERE id = {id_img} LIMIT 1 
+""")
             res = self.cur.fetchone()
 
             if res:
@@ -33,7 +35,8 @@ class FDataBase:
 
     def getPictureAnonce(self):
         try:
-            self.cur.execute(""" SELECT id, title FROM image ORDER BY id """)
+            self.cur.execute(""" SELECT id, title, resolution, name_file, datetime FROM image ORDER BY datetime DESC 
+            """)
             res = self.cur.fetchall()
 
             if res:
