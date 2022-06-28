@@ -1,12 +1,14 @@
-from flask import Flask, render_template, request, g, redirect, send_from_directory, abort, flash
+from flask import Flask, render_template, request, g, redirect, send_from_directory, abort, flash, url_for
 import sqlite3
 from FDataBase import FDataBase
 from werkzeug.utils import secure_filename
+from DateTime.DateTime import date_time
 import os
 
 DATABASE = 'DataBaseImages.db'
 SECRET_KEY = '5f352379324c22463451387a0aec5d2f'
-UPLOADER_FOLDER = r'C:\Users\Admin\PycharmProjects\sqlite3\SaveImages'
+FOLDER_FOR_IMAGES = r'\SaveImages'
+UPLOADER_FOLDER = os.getcwd() + FOLDER_FOR_IMAGES
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
@@ -72,14 +74,15 @@ def main():
 
             title = filename.rsplit('.', 1)[0]
             resolution = filename.rsplit('.', 1)[1]
+            name_file = title + '.' + resolution
+            my_date_time = date_time()
 
             file.save(os.path.join(app.config['UPLOADER_FOLDER'], filename))
 
-            res = dbase.addImage(title, resolution)
+            res = dbase.addImage(title, resolution, my_date_time, name_file)
 
             if res:
-
-                return render_template('LinksImages.html', pic=dbase.getPictureAnonce())
+                return redirect(url_for('ShowLinksPicture'))
             else:
                 print('Ошибка внесения в БД')
         else:
@@ -95,10 +98,9 @@ def uploads(id_image):
     dbase = FDataBase(db)
 
     title, resolution, id_image = dbase.getDataImage(id_image)
-    title_image = title.replace('_', ' ')
+    title_image = title.replace('_', ' ').capitalize()
 
     if title:
-
         filename = title + '.' + resolution
 
         return render_template('images.html', filename=filename, title_image=title_image, id_image=id_image)
@@ -107,7 +109,6 @@ def uploads(id_image):
 
 @app.route('/send_img/<filename>')
 def send_img(filename):
-
     return send_from_directory(app.config['UPLOADER_FOLDER'], filename)
 
 
@@ -138,7 +139,6 @@ def remove(id_image):
     dbase.removeDataImage(id_image)
 
     return render_template('success.html', title='Удаление файла')
-
 
 
 create_db()
